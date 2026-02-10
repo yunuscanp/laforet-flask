@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Yeni Blog Ekle</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blog-add.css') }}">
+    <link rel="icon" type="image/jpg" href="{{ url_for('static', filename='images/laforet.jpg') }}">
+
+</head>
+<body>
+<div class="top-bar">
+    <a href="{{ url_for('admin_blogs') }}" class="back-link">
+        ← Admin Panele Dön
+    </a>
+</div>
+<h1>Yeni Blog Ekle</h1>
+
+<form method="POST">
+
+    <label>Blog Başlığı</label><br>
+    <input type="text" name="title" style="width:100%;" required>
+    <br><br>
+
+    <label>Meta Açıklaması</label><br>
+    <textarea name="meta_description" rows="3" style="width:100%;"></textarea>
+    <br><br>
+
+    <label>Blog İçeriği</label><br>
+    <textarea name="content" rows="15" style="width:100%;" required></textarea>
+    <br><br>
+
+    <button type="submit">Kaydet</button>
+
+</form>
+
+
+
+
+</body>
+</html>

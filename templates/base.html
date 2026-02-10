@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+
+    <title>{% block title %}La Foret{% endblock %}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+    {% block meta %}{% endblock %}
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container">
+        <a href="/" class="logo">La Foret</a>
+        <nav>
+            <a href="/">Anasayfa</a>
+            <a href="/blog">Blog</a>
+            <a href="/contact">İletişim</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>© La Foret</p>
+    </div>
+</footer>
+
+</body>
+</html>

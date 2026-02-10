@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hakkımızda | La Forèt İstanbul</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/jpg" href="{{ url_for('static', filename='images/laforet.jpg') }}">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+</head>
+
+<body>
+
+<header>
+  <a class="brand" href="{{ url_for('index') }}">La Forèt İstanbul</a>
+
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav id="nav">
+    <a href="{{ url_for('index') }}">Ana Sayfa</a>
+    <a href="{{ url_for('about') }}">Hakkımızda</a>
+    <a href="{{ url_for('contact') }}">İletişim</a>
+    <a href="{{ url_for('blog_list') }}">Blog</a>
+  </nav>
+</header>
+
+<main>
+  <div class="card">
+    <h1>Hakkımızda</h1>
+
+    <p>
+      La Foret İstanbul, doğanın büyüleyici atmosferini modern tasarım ve kusursuz hizmet anlayışıyla
+      buluşturan seçkin bir organizasyon mekanıdır. Çam ormanlarının huzur veren atmosferinde
+      konumlanan mekanımız, 500 kişi kapasiteli açık alanı ve 300 kişi kapasiteli kapalı alanı ile
+      düğün, kına, nişan, kız isteme merasimi, mezuniyet ve kurumsal etkinliklere ev sahipliği yapmaktadır.
+    </p>
+
+    <p>
+      Her detayı özenle düşünülmüş mimarisi, şık dekorasyonu ve profesyonel ekibiyle La Foret İstanbul,
+      hayallerinizi gerçeğe dönüştürmeyi hedefler.
+    </p>
+
+    <p>
+      La Foret İstanbul yalnızca bir davet mekanı değil, aynı zamanda yaşamınızın en değerli anlarına
+      eşlik eden prestijli bir buluşma noktasıdır.
+    </p>
+  </div>
+</main>
+
+<div class="social">
+  <a href="mailto:laforetistanbul@gmail.com" aria-label="Mail">
+    <svg viewBox="0 0 24 24">
+      <path d="M4 6h16v12H4z"/>
+      <path d="M22 6l-10 7L2 6"/>
+    </svg>
+  </a>
+
+  <a href="https://wa.me/905335687053" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24">
+      <path d="M21 11.5a8.5 8.5 0 1 1-3.2-6.7"/>
+      <path d="M8.5 9.5c.5 1.5 1.5 2.5 3 3"/>
+      <path d="M16 16l-3 1-5-5 1-3"/>
+    </svg>
+  </a>
+
+  <a href="https://www.instagram.com/laforetistanbul/" target="_blank" aria-label="Instagram">
+    <svg viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="5"/>
+      <circle cx="12" cy="12" r="3.5"/>
+      <circle cx="17.5" cy="6.5" r="0.8"/>
+    </svg>
+  </a>
+</div>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('nav');
+
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>

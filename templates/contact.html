@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İletişim | La Forèt İstanbul</title>
+
+  <link rel="icon" type="image/jpg" href="{{ url_for('static', filename='images/laforet.jpg') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+</head>
+
+<body>
+
+<header>
+  <a class="brand" href="{{ url_for('index') }}">La Forèt İstanbul</a>
+
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span><span></span><span></span>
+  </div>
+
+  <nav id="nav">
+    <a href="{{ url_for('index') }}">Ana Sayfa</a>
+    <a href="{{ url_for('about') }}">Hakkımızda</a>
+    <a href="{{ url_for('contact') }}">İletişim</a>
+    <a href="{{ url_for('blog_list') }}">Blog</a>
+  </nav>
+</header>
+
+<main>
+  <div class="card">
+    <h1>Bizimle İletişime Geçin</h1>
+    <p class="lead">Tarih, misafir sayısı ve tercihlerinizi paylaşın; size hızlıca dönüş yapalım.</p>
+
+    <form id="contactForm" method="POST" action="https://api.web3forms.com/submit">
+
+      <input type="hidden" name="access_key" value="7c4e50e1-8ce8-47df-803a-38f6a3e41eca">
+      <input type="hidden" name="subject" value="La Forèt - Rezervasyon Talebi">
+
+      <div class="grid">
+
+        <div>
+          <label>İsim – Soyisim *</label>
+          <input name="İsim Soyisim" required>
+        </div>
+
+        <div>
+          <label>Telefon *</label>
+          <input name="Telefon" required>
+        </div>
+
+        <div>
+          <label>E-posta *</label>
+          <input name="email" type="email" required>
+        </div>
+
+        <div>
+          <label>Etkinlik Türü *</label>
+          <select name="Etkinlik Türü" required>
+            <option value="">Seçiniz</option>
+            <option>Düğün</option>
+            <option>Kına</option>
+            <option>Nişan</option>
+            <option>İsteme</option>
+            <option>Mezuniyet</option>
+            <option>Kurumsal Etkinlik</option>
+            <option>Diğer</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Tarih *</label>
+          <input type="date" name="Tarih" required>
+        </div>
+
+        <div>
+          <label>Misafir Sayısı *</label>
+          <input type="number" name="Misafir Sayısı" min="1" required>
+        </div>
+
+        <!-- 🔥 ORGANİZASYON TERCİHİ -->
+        <div>
+          <label>Organizasyon Tercihi *</label>
+          <div class="radio-group">
+            <label><input type="radio" name="Organizasyon Tercihi" value="Yemekli" required> Yemekli</label>
+            <label><input type="radio" name="Organizasyon Tercihi" value="Kokteyl"> Kokteyl</label>
+            <label><input type="radio" name="Organizasyon Tercihi" value="Her ikisi"> Her ikisi</label>
+          </div>
+        </div>
+
+        <!-- 🔥 AÇIK / KAPALI -->
+        <div>
+          <label>Açık / Kapalı Alan Tercihi</label>
+          <select name="Alan Tercihi">
+            <option value="">Farketmez</option>
+            <option>Açık (Bahçe)</option>
+            <option>Kapalı (Salon)</option>
+          </select>
+        </div>
+
+        <div class="full">
+          <label>Notlar / Özel İstekler</label>
+          <textarea name="Notlar"></textarea>
+        </div>
+
+        <!-- 🔥 BİZİ ARAYIN -->
+        <div class="full">
+          <label>
+            <input type="checkbox" name="Bizi Arayın" value="Evet">
+            Bizi aramanızı istiyorum
+          </label>
+        </div>
+
+        <div class="full">
+          <label>
+            <input type="checkbox" required>
+            Kişisel verilerimin iletişim amacıyla kullanılmasını kabul ediyorum.
+          </label>
+        </div>
+
+      </div>
+
+      <div class="actions">
+        <button type="submit">Gönder</button>
+        <button type="reset">Temizle</button>
+      </div>
+
+    </form>
+
+    <div class="map-container">
+      <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.026396977936!2d29.14141307639851!3d40.96883197136865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac51bd886f46d%3A0xbdf95bd8bc8f0899!2sLa%20Foret%20%C4%B0stanbul!5e0!3m2!1str!2str!4v1710000000000"
+  width="100%"
+  height="450"
+  style="border:0; border-radius:16px;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+    </div>
+
+    <div class="social">
+  <a href="mailto:laforetistanbul@gmail.com" aria-label="Mail">
+    <svg viewBox="0 0 24 24">
+      <path d="M4 6h16v12H4z"/>
+      <path d="M22 6l-10 7L2 6"/>
+    </svg>
+  </a>
+
+  <a href="https://wa.me/905335687053" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24">
+      <path d="M21 11.5a8.5 8.5 0 1 1-3.2-6.7"/>
+      <path d="M8.5 9.5c.5 1.5 1.5 2.5 3 3"/>
+      <path d="M16 16l-3 1-5-5 1-3"/>
+    </svg>
+  </a>
+
+  <a href="https://www.instagram.com/laforetistanbul/" target="_blank" aria-label="Instagram">
+    <svg viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="5"/>
+      <circle cx="12" cy="12" r="3.5"/>
+      <circle cx="17.5" cy="6.5" r="0.8"/>
+    </svg>
+  </a>
+</div>
+
+  </div>
+</main>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav");
+  toggle.addEventListener("click", () => nav.classList.toggle("active"));
+</script>
+
+</body>
+</html>

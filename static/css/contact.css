@@ -1,0 +1,143 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-image: url("../images/laforet.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain;          /* main.css ile AYNI */
+  background-attachment: fixed;
+  background-color: #faf3e9;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* ORTA */
+main {
+  display: flex;
+  justify-content: center;
+  padding-top: 160px;
+}
+
+/* CARD */
+.card {
+  max-width: 900px;
+  padding: 32px;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid #e2d7c9;
+  border-radius: 12px;
+}
+
+
+
+.lead {
+  margin-bottom: 20px;
+  color: #4a493c;
+}
+
+/* FORM */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.grid > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+input, textarea, select {
+  padding: 12px;
+  border: 1px solid #d8cdbf;
+  border-radius: 6px;
+}
+
+textarea {
+  min-height: 90px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.map-container {
+  margin-top: 40px;
+  border-radius: 16px;
+  overflow: hidden; /* köşeleri düzgün keser */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 420px;
+  border: 0;
+  border-radius: 14px;
+}
+
+/* SOSYAL */
+.social {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.95); /* 🔥 daha net */
+  border: 1px solid #cbbca6;              /* 🔥 kontrast */
+
+  color: #2f2e24;                         /* ikon rengi */
+  font-size: 16px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: all 0.25s ease;
+}
+
+.social a:hover {
+  background: #efe6d9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.social svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-size: cover;        /* mobilde küçülme yok */
+    background-position: center top;
+    background-attachment: scroll; /* mobilde fixed sorun çıkarır */
+  }
+
+  main {
+    padding-top: 140px;            /* header + görsel boşluğu */
+  }
+
+  .card {
+    padding: 22px 18px;
+    border-radius: 14px;
+  }
+
+  .map-container iframe {
+    height: 320px;                 /* mobilde daha dengeli */
+  }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | La Forèt İstanbul</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/jpg" href="{{ url_for('static', filename='images/laforet.jpg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <a class="brand" href="/">La Forèt İstanbul</a>
+
+    <div class="menu-toggle" id="menu-toggle">
+        <span></span><span></span><span></span>
+    </div>
+
+    <nav id="nav">
+        <a href="/">Ana Sayfa</a>
+        <a href="/about">Hakkımızda</a>
+        <a href="/contact">İletişim</a>
+        <a href="/blog">Blog</a>
+    </nav>
+</header>
+
+<main>
+    <div class="hero">
+        <h1>Blog</h1>
+        <p>La Forèt İstanbul’dan ilham veren yazılar</p>
+
+        {% for blog in blogs %}
+        <div class="blog-card">
+    <h2>{{ blog.title }}</h2>
+
+    {% if blog.meta_description %}
+        <p>{{ blog.meta_description }}</p>
+    {% endif %}
+
+    <a class="read-more" href="/blog/{{ blog.slug }}">
+        Devamını Oku →
+    </a>
+</div>
+        {% endfor %}
+    </div>
+</main>
+
+<script>
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav');
+    toggle.addEventListener('click', () => nav.classList.toggle('active'));
+</script>
+
+</body>
+</html>

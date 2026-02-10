@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Yönetimi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+    <link rel="icon" type="image/jpg" href="{{ url_for('static', filename='images/laforet.jpg') }}">
+
+</head>
+<body>
+
+<h1>Blog Yönetimi</h1>
+<br>
+<a href="{{ url_for('admin_change_password') }}">
+    🔑 Şifre Değiştir
+</a>
+
+<br>
+<a href="/admin/blog/add">+ Yeni Blog Ekle</a>
+<br><br>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Başlık</th>
+        <th>İşlemler</th>
+    </tr>
+
+    {% for blog in blogs %}
+    <tr>
+        <td>{{ blog.title }}</td>
+        <td>
+            <a href="/admin/blog/edit/{{ blog.id }}">Düzenle</a> |
+            <a href="/admin/blog/delete/{{ blog.id }}"
+               onclick="return confirm('Silmek istediğine emin misin?')">
+               Sil
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<br>
+<a href="/admin/logout">Çıkış Yap</a>
+
+
+
+</body>
+</html>

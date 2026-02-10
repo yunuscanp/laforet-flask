@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Düzenle</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blog-edit.css') }}">
+    <link rel="icon" type="image/jpg" href="{{ url_for('static', filename='images/laforet.jpg') }}">
+</head>
+<body>
+
+<h1>Blog Düzenle</h1>
+<div class="top-bar">
+    <a href="{{ url_for('admin_blogs') }}" class="back-link">
+        ← Admin Panele Dön
+    </a>
+</div>
+
+
+<form method="POST">
+
+    <label>Blog Başlığı</label><br>
+    <input type="text" name="title" value="{{ blog.title }}" style="width:100%;" required>
+    <br><br>
+
+    <label>Meta Açıklaması</label><br>
+    <textarea name="meta_description" rows="3" style="width:100%;">{{ blog.meta_description or '' }}</textarea>
+    <br><br>
+
+    <label>Blog İçeriği</label><br>
+    <textarea name="content" rows="15" style="width:100%;" required>{{ blog.content }}</textarea>
+    <br><br>
+
+    <button type="submit">Güncelle</button>
+
+</form>
+
+
+
+</body>
+</html>

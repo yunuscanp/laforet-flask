@@ -1,0 +1,116 @@
+/* GENEL */
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: #faf3e9;
+    color: #2f2e24;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* BAŞLIK */
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* MESAJLAR */
+p {
+    margin: 6px 0 14px;
+    font-size: 14px;
+}
+
+/* FORM KART */
+form {
+    width: 100%;
+    max-width: 420px;
+    background: rgba(255,255,255,0.9);
+    padding: 28px 26px;
+    border-radius: 14px;
+    border: 1px solid #e2d7c9;
+    box-shadow: 0 14px 35px rgba(0,0,0,0.08);
+}
+
+/* LABEL */
+label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* INPUT */
+input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #d8cdbf;
+    font-family: inherit;
+    box-sizing: border-box; /* ekstra garanti */
+}
+
+
+input:focus {
+    outline: none;
+    border-color: #6b5b3e;
+    box-shadow: 0 0 0 2px rgba(107, 91, 62, 0.15);
+}
+
+/* BUTON */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    background: #3b3a2e;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+button:hover {
+    background: #2a291f;
+    transform: translateY(-1px);
+}
+
+/* GERİ DÖN LİNK */
+a {
+    margin-top: 14px;
+    font-size: 14px;
+    color: #6b5b3e;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #6b5b3e;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+
+/* MOBİL */
+@media (max-width: 480px) {
+    form {
+        padding: 22px 18px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
